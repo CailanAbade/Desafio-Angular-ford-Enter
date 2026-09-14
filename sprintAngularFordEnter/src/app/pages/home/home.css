@@ -37,57 +37,7 @@
     margin: 10px 0px 0px 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-main{
-    display: flex;
-    flex-direction: row;
-}
-
-.hamburguer {
-    width: 400px;
-    background-color: rgb(240, 240, 240);
-}
-
-.hamburguer img {
-    height: 50px;
-    width:  100px;
-    margin: 20px 0px 0px 10px;
-}
-
-.hamburguer a {
-    display: flex;
-    padding: 10px;
-    flex-direction:column
-}
-
-.hamburguer a:hover {
-    background-color: rgba(128, 128, 128, 0.541);
-    border-left:2px solid red;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 700px) {
+@media (max-width: 450px) {
     main {
         flex-direction: column;
     }
