@@ -1,11 +1,35 @@
 import { Component } from '@angular/core';
+import { Auth } from '../../services/auth';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
 export class Login {
+
+  usuario = {
+    nome: '',
+    senha: ''
+  }
+
+  constructor(private auth:Auth, private router:Router){}
+
+  login(){
+    this.auth.login(this.usuario).subscribe({
+      next:(Response) => {
+        this.router.navigate(['/home']);
+      }, 
+      error:(err) => {
+        console.error("Falha no login", err)
+      }
+
+
+    })
+  }
 
 }
