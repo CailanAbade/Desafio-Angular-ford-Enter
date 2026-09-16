@@ -49,6 +49,7 @@ export class Dashboard implements OnInit {
       },
       error: (err) => {
         console.error('Erro ao buscar veiculo:', err);
+        alert ("Digite um código vin valido")
         this.infoVeiculo = null;
       }
     });
