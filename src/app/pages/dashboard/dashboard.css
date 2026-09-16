@@ -73,12 +73,12 @@
     display: flex;
     justify-content: center;
     height: 15vh;
-    margin: 95px 0px 0px 0px;
+    margin: 57px 0px 0px 0px;
 }
 
 .tabela td {
     width: 1000px;
-    padding-left: 15px;
+    padding-left: 30px;
 }
 
 .tabela th {

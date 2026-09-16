@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Auth } from '../../services/auth';
 
 @Component({
   selector: 'app-hamburguer',
@@ -14,6 +15,12 @@ export class Hamburguer {
   mostrarElemento(){
     
     this.elemento = !this.elemento;
+  }
+
+  constructor(private auth:Auth){}
+
+  logout():void{
+    this.auth.logout();
   }
 
 }

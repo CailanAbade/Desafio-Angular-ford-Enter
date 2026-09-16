@@ -27,6 +27,7 @@ export class Login {
       }, 
       error:(err) => {
         console.error("Falha no login", err)
+        alert ("Usuário ou senha incorretos")
       }
 
 

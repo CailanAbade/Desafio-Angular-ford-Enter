@@ -39,7 +39,11 @@
     border-left:2px solid red;
 }
 
-
+#Logout:hover{
+    background-color: rgba(255, 0, 0, 0.849);
+    color: white;
+    border-left:3px solid rgb(161, 1, 1);
+}
 
 @media (max-width: 450px) {
     main {
@@ -66,4 +70,5 @@
         flex-direction: row;
         padding: 10px;
     }
+
 }

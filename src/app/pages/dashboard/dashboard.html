@@ -13,33 +13,32 @@
 
             <div class="veiculo">
                 <p>Veículo</p>
-                <select class="opcoes" name="" id="">
+                <select class="opcoes" name="" id="" (change)="veiculoSelecionado($event)">
                     <option selected disabled hidden value="">Selecione uma opção</option>
-                    <option value="">Ranger</option>
-                    <option value="">Mustang</option>
-                    <option value="">Temtory</option>
-                    <option value="">Bronco sport</option>
+                    <option *ngFor="let v of vehicles" [value]="v.id">
+                        {{ v.vehicle }}
+                    </option>
                 </select>
             </div>
-
+ 
 
             <div class="totalDeVendas">
                 <p>Total de Vendas</p>
-                <span id="numeros">1500</span>
+                <span id="numeros"> {{Selecionado?.volumetotal || 0}} </span>
                 <span>Und.</span>
             </div>
 
 
             <div  class="conectados">
                 <p>Conectados</p>
-                <span id="numeros">500</span>
+                <span id="numeros"> {{Selecionado?.connected || 0}} </span>
                 <span>Und.</span>
             </div>
 
 
             <div class="updateSoftware">
                 <p>Update Software</p>
-                <span id="numeros">750</span>
+                <span id="numeros"> {{Selecionado?.softwareUpdates || 0}} </span>
                 <span>Und.</span>
             </div>
 
@@ -48,7 +47,7 @@
 
 
         <div class="carros">
-            <img src="/img/mustang.png" alt="Ford-Mustang">
+            <img *ngIf="Selecionado" [src]="Selecionado.img" [alt]="Selecionado.vehicle">
         </div>
 
 
@@ -67,12 +66,12 @@
                    
                 <tbody>
                      <tr>
-                        <td><input type="text"></td>
-                        <td>50000KM</td>
-                        <td>90%</td>
-                        <td>on</td>
-                        <td>-12,2322</td>
-                        <td>-35,2314</td>
+                        <td><input type="text" [(ngModel)]="vinDigitado" (keyup.enter)="buscarPorVin()" placeholder="Digite o código vin"></td>
+                            <td>{{ infoVeiculo?.odometro || 0 }}KM</td>
+                            <td>{{ infoVeiculo?.nivelCombustivel || 0 }}%</td>
+                            <td>{{ infoVeiculo?.status || 0 }}</td>
+                            <td>{{ infoVeiculo?.lat || 0 }}</td>
+                            <td>{{ infoVeiculo?.long || 0 }}</td>
                     </tr>
                 </tbody>
                 <tfoot class="ada">
