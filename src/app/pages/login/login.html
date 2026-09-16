@@ -8,19 +8,19 @@
             <span id="texto1">Boas-vindas</span>
             <div>
             </div>
-            <form>
+            <form (ngSubmit)="login()">
                 <div class="campo-login">
                     <div class="campo-email">
-                        <input placeholder="insira o seu email" type="text">
+                        <input placeholder="insira o seu email" type="text" [(ngModel)]="usuario.nome" name="nome">
                     </div>
-                    <input placeholder="insira a sua senha" type="text">
+                    <input placeholder="insira a sua senha" type="password" [(ngModel)]="usuario.senha" name="senha">
                 </div>
                 <div id="checkdiv">
                     <span id="texto2">Logar Automaticamente</span>
                     <input id="check" type="checkbox">
                     <span>&#9432;</span>
                 </div>
-                <button id="botao">Entrar</button>
+                <button type="submit" id="botao">Entrar</button>
             </form>
         </div>
         

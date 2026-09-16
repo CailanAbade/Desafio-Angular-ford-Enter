@@ -7,7 +7,7 @@
     height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 90%;
 }
 
 #titulo {
@@ -15,7 +15,7 @@
     font-size: 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: rgba(150, 150, 150, 0.63);
+    background-color: rgba(150, 150, 150, 0.76);
 }
 
 #frase {

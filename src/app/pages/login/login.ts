@@ -20,6 +20,7 @@ export class Login {
   constructor(private auth:Auth, private router:Router){}
 
   login(){
+    console.log("cliquei no entrar");
     this.auth.login(this.usuario).subscribe({
       next:(Response) => {
         this.router.navigate(['/home']);
